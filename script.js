@@ -22,9 +22,11 @@ const goToNextStep = ()=>{
   progressBar.style.width = `${progressPercent}%`;
   progressStep++;
   progressPercent += 33;
+  checkProgressStep();
 }
 
 const goToPrevStep = ()=>{
+  checkProgressStep();
   circles[progressStep - 1].classList.remove('active');
   progressStep--;
   progressPercent -=33;
