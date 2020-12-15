@@ -7,7 +7,6 @@ let progressPercent =33;
 
 let progressStep = 1;
 
-
 const checkProgressStep = ()=>{
   
   if(progressStep ===4){
