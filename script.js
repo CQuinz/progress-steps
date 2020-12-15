@@ -9,14 +9,7 @@ let progressStep = 1;
 
 
 const checkProgressStep = ()=>{
-  // if(progressStep >1){
-  //   prevButton.disabled = false;
-  // }else if(progressStep ===4){
-  //   nextButton.disabled = true;
-  // }else if(progressStep === 1 ){
-  //   prevButton.disabled = true;
-  // }
-
+  
   if(progressStep ===4){
     nextButton.disabled = true;
   }else if(progressStep >1){
