@@ -4,7 +4,6 @@ const circles = document.querySelectorAll('.circle');
 const progressBar = document.querySelector('#progress');
 
 let progressPercent = 0;
-
 let progressStep = 1;
 
 const enableDisableBtn = ()=>{
@@ -22,14 +21,12 @@ const enableDisableBtn = ()=>{
 
 const goToNextStep = ()=>{
 
-  
     circles[progressStep].classList.add('active');
     progressPercent += 33;
     progressBar.style.width = `${progressPercent}%`;
     progressStep++;
     enableDisableBtn();
     console.log(progressStep);
-
 }
 
 const goToPrevStep = ()=>{
