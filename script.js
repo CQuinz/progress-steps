@@ -3,38 +3,51 @@ const prevButton = document.querySelector('#prev');
 const circles = document.querySelectorAll('.circle');
 const progressBar = document.querySelector('#progress');
 
-let progressPercent =33;
+let progressPercent = 0;
 
 let progressStep = 1;
 
-const checkProgressStep = ()=>{
+const enableDisableBtn = ()=>{
   
-  if(progressStep ===4){
-    nextButton.disabled = true;
-  }else if(progressStep >1){
-    prevButton.disabled = false;
-  }else if(progressStep === 1 ){
+  if(progressStep ===1 && progressStep < 4){
+    nextButton.disabled = false;
     prevButton.disabled = true;
+  }else if(progressStep >1 && progressStep < 4){
+    nextButton.disabled = false;
+    prevButton.disabled = false;
+  }else{
+    nextButton.disabled= true;
   }
 }
 
 const goToNextStep = ()=>{
+
+  // if(progressStep >=1){
+    circles[progressStep].classList.add('active');
+    progressPercent += 33;
+    progressBar.style.width = `${progressPercent}%`;
+    
+    progressStep++;
+    
+    enableDisableBtn();
+    console.log(progressStep);
+  // }
   
-  circles[progressStep].classList.add('active');
-  progressBar.style.width = `${progressPercent}%`;
-  progressStep++;
-  progressPercent += 33;
-  checkProgressStep();
-  console.log(progressStep);
 }
 
 const goToPrevStep = ()=>{
-  
-  circles[progressStep - 1].classList.remove('active');
-  progressStep--;
+  // if(progressStep ===4){
+  //   progressPercent -=66;
+  // } else{
+  //   progressPercent -=33;
+  // }
   progressPercent -=33;
+  progressStep--;
+  circles[progressStep].classList.remove('active');
   progressBar.style.width = `${progressPercent}%`;
-  checkProgressStep();
+  
+  
+  enableDisableBtn();
   console.log(progressStep);
 }
 
