@@ -55,6 +55,8 @@ nextButton.addEventListener('click', ()=>{
   if(currentActive > circles.length){
     currentActive = circles.length;
   }
+
+  update();
 });
 
 prevButton.addEventListener('click', ()=>{
@@ -63,4 +65,12 @@ prevButton.addEventListener('click', ()=>{
   if(currentActive < 1){
     currentActive = 1;
   }
+
+  update();
 });
+
+function update(){
+  circles.forEach((circle,idx)=>{
+    
+  });
+}
