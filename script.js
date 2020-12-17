@@ -22,30 +22,21 @@ const enableDisableBtn = ()=>{
 
 const goToNextStep = ()=>{
 
-  // if(progressStep >=1){
+  
     circles[progressStep].classList.add('active');
     progressPercent += 33;
     progressBar.style.width = `${progressPercent}%`;
-    
     progressStep++;
-    
     enableDisableBtn();
     console.log(progressStep);
-  // }
-  
+
 }
 
 const goToPrevStep = ()=>{
-  // if(progressStep ===4){
-  //   progressPercent -=66;
-  // } else{
-  //   progressPercent -=33;
-  // }
   progressPercent -=33;
   progressStep--;
   circles[progressStep].classList.remove('active');
   progressBar.style.width = `${progressPercent}%`;
-  
   
   enableDisableBtn();
   console.log(progressStep);
